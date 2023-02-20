@@ -6,7 +6,7 @@ import unittest
 
 import native_lib.python
 import native_lib.python.mypsi as pypsi
-from native_lib.python.mypsi import psiRun
+from native_lib.python.mypsi import psiRun, psiRun1
 
 if __debug__:
     print(f'python path: {sys.path}')
@@ -21,6 +21,9 @@ class TestPsi(unittest.TestCase):
 
     def test_psiRun(self):
         self.assertEqual(3, psiRun(1, 2))
+    
+    def test_psiRun1(self):
+        self.assertEqual(-1, psiRun1(1, 2))
 
 
 if __name__ == '__main__':

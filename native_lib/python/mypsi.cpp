@@ -15,6 +15,7 @@ PYBIND11_MODULE(mypsi, m) {
 
     // PSI function
     m.def("psiRun", &psiRun, "psi pybind api");
+    m.def("psiRun1", &psiRun1, "psi pybind api");
 
 
 }

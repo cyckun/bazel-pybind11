@@ -2,14 +2,6 @@
 load("@rules_python//python:defs.bzl", "py_test")
 load("@pybind11_bazel//:build_defs.bzl", "pybind_extension")
 
-pybind_extension(
-    name = "myfoo",
-    srcs = ["myfoo.cpp"],
-    #visibility = ["//visibility:public"],
-    deps = [
-        "//native_lib:foo",
-    ],
-)
 
 pybind_extension(
     name = "mypsi",
@@ -18,18 +10,6 @@ pybind_extension(
     deps = [
         "//native_lib:psiRun",
     ],
-)
-
-py_test(
-    name = "foo_test",
-    size = "small",
-    srcs = ["foo_test.py"],
-    python_version = "PY3",
-    data = select({
-      "@platforms//os:windows": [":myfoo.pyd"],
-      "//conditions:default": [":myfoo.so"],
-    }),
-    tags = ["unit"],
 )
 
 py_test(
