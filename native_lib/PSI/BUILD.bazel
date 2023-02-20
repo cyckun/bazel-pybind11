@@ -1,0 +1,27 @@
+
+cc_import (
+    name = "libOTe",
+    static_library = "lib/liblibOTe.a",
+)
+
+cc_import (
+    name = "libcryptoTools",
+    hdrs = glob(["include/cryptoTools/Network/*.h",
+                "include/cryptoTools/boost/*.h"]),
+    static_library = "lib/libcryptoTools.a",
+)
+
+cc_library (
+    name = "PSI",
+    srcs = ["src/PsiReceiver.cpp",
+            "src/PsiSender.cpp",
+            "src/utils.cpp",],
+    hdrs = ["include/Defines.h",
+            "include/PsiReceiver.h",
+            "include/PsiSender.h",
+            "include/utils.h",],
+
+    deps = [":libOTe", ":libcryptoTools"],
+
+    visibility = ["//visibility:public"],
+)
