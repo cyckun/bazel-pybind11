@@ -14,7 +14,7 @@ PYBIND11_MODULE(mypsi, m) {
     m.doc() = "mypsi module"; // optional module docstring
 
     // PSI function
-    m.def("psiRun", &psiRun, "psi pybind api");
+    // m.def("psiRun", &psiRun, "psi pybind api");
     m.def("psiRun1", &psiRun1, "psi pybind api");
 
 

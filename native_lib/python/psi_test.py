@@ -19,8 +19,8 @@ if __debug__:
 class TestPsi(unittest.TestCase):
     '''Test Psi'''
 
-    def test_psiRun(self):
-        self.assertEqual(3, psiRun(1, 2))
+    # def test_psiRun(self):
+    #     self.assertEqual(3, psiRun(1, 2))
     
     def test_psiRun1(self):
         self.assertEqual(-1, psiRun1(1, 2))

@@ -3,7 +3,7 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_import (
     name = "sub",
-    hdrs = ["include/lib/sub.hpp",],
+    hdrs = ["include/psi/sub.hpp",],
     shared_library = "lib/libsub.so",
 )
 
@@ -11,7 +11,7 @@ cc_library(
     name = "psiRun",
     srcs = ["psiRun.cpp"],
     hdrs = ["include/psi/psiRun.hpp",
-            "include/lib/sub.hpp"],
+            "include/psi/sub.hpp"],
     strip_include_prefix = "include",
     deps = [":sub"],
     visibility = ["//visibility:public"],

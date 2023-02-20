@@ -1,5 +1,5 @@
 #include "psi/psiRun.hpp"
-#include "lib/sub.hpp"
+#include "psi/sub.hpp"
 
 int psiRun(int a, int b) {
   return a + b;
