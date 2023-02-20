@@ -8,6 +8,14 @@ cc_library(
     visibility = ["//visibility:public"],
 )
 
+cc_library(
+    name = "psiRun",
+    srcs = ["psiRun.cpp"],
+    hdrs = ["include/psi/psiRun.hpp"],
+    strip_include_prefix = "include",
+    visibility = ["//visibility:public"],
+)
+
 cc_test(
     name = "foo_test",
     srcs = ["foo_test.cpp"],

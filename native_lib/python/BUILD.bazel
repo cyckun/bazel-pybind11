@@ -11,6 +11,15 @@ pybind_extension(
     ],
 )
 
+pybind_extension(
+    name = "mypsi",
+    srcs = ["mypsi.cpp"],
+    #visibility = ["//visibility:public"],
+    deps = [
+        "//native_lib:psiRun",
+    ],
+)
+
 py_test(
     name = "foo_test",
     size = "small",
@@ -19,6 +28,18 @@ py_test(
     data = select({
       "@platforms//os:windows": [":myfoo.pyd"],
       "//conditions:default": [":myfoo.so"],
+    }),
+    tags = ["unit"],
+)
+
+py_test(
+    name = "psi_test",
+    size = "small",
+    srcs = ["psi_test.py"],
+    python_version = "PY3",
+    data = select({
+      "@platforms//os:windows": [":mypsi.pyd"],
+      "//conditions:default": [":mypsi.so"],
     }),
     tags = ["unit"],
 )
